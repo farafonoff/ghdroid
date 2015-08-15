@@ -3,7 +3,8 @@ package com.example.artem.ghdroid;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 
 /**
@@ -22,7 +23,7 @@ import android.support.v4.app.FragmentActivity;
  * {@link RepositoryListFragment.Callbacks} interface
  * to listen for item selections.
  */
-public class RepositoryListActivity extends FragmentActivity
+public class RepositoryListActivity extends AppCompatActivity
         implements RepositoryListFragment.Callbacks, SearchResultFragment.OnFragmentInteractionListener {
 
     /**
@@ -35,6 +36,8 @@ public class RepositoryListActivity extends FragmentActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repository_list);
+        Toolbar mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        //setSupportActionBar(mActionBarToolbar);
 
         if (findViewById(R.id.repository_detail_container) != null) {
             // The detail container view will be present only in the
