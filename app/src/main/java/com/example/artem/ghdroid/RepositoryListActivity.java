@@ -1,6 +1,7 @@
 package com.example.artem.ghdroid;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
@@ -22,7 +23,7 @@ import android.support.v4.app.FragmentActivity;
  * to listen for item selections.
  */
 public class RepositoryListActivity extends FragmentActivity
-        implements RepositoryListFragment.Callbacks {
+        implements RepositoryListFragment.Callbacks, SearchResultFragment.OnFragmentInteractionListener {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -77,5 +78,10 @@ public class RepositoryListActivity extends FragmentActivity
             detailIntent.putExtra(RepositoryDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
         }
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
